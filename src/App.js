@@ -4,7 +4,11 @@ import './App.css';
 
 function App() {
   return (
-    <Clock />
+
+    <div className="clock">
+      <Clock className="time" />
+    </div>
+
   );
 }
 
@@ -42,8 +46,8 @@ class Clock extends React.Component {
       return (
         <div className="clock">
           {hours == 0 ? 12 : hours > 12 ? hours - 12 : hours}:
-          {minutes > 9 ? minutes : '0${minutes}'}:
-          {seconds > 9 ? seconds : '0${seconds}'} {ampm}
+          {minutes > 9 ? minutes : `0${minutes}`}:
+          {seconds > 9 ? seconds : `0${seconds}`} {ampm}
         </div>
       );
   }
